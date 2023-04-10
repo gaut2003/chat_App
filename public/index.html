@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+			integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="css/style.css" />
+		<title>ChitHUB App</title>
+	</head>
+	<body>
+		<div class="join-container">
+			<header class="join-header">
+				<h1><i class="fas fa-smile"></i> ChitHUB </h1>
+			</header>
+			<main class="join-main">
+				<form action="chat.html">
+					<div class="form-control">
+						<!-- <label for="username"> Username </label>
+						<input
+							type="text"
+							name="username"
+							id="username"
+							placeholder="Enter username..."
+							required
+						/> -->
+						<label for="username"> Username</label>
+						<input type="text" id="username" name="username" placeholder="Enter username..." required>
+						<br><br>
+						<label for="anonymous">Anonymous name:</label>
+						<input type="checkbox" id="anonymous" name="anonymous">
+						<br><br>
+						<script>
+							const usernameInput = document.getElementById("username");
+							const anonymousCheckbox = document.getElementById("anonymous");
+							function generateRandomUsername() {
+								const randomNum = Math.floor(Math.random() * 1000);
+								const username = "Anonymous" + randomNum;
+								return username;
+							}
+							anonymousCheckbox.addEventListener("change", function () {
+								if(anonymousCheckbox.checked){
+									const randomUsername = generateRandomUsername();
+									usernameInput.value = randomUsername;
+									console.log(usernameInput.value);
+									// usernameInput.disabled = true;
+								}
+								else{
+									usernameInput.value = "";
+									// usernameInput.disabled = false;
+								}
+							});
+						</script>
+					</div>
+
+					<div class="form-control">
+						<label for="room"> Room </label>
+						<select name="room" id="room" onchange="setValue()">
+							<option value="JavaScript🌐">JavaScript</option>
+							<option value="C++🤖">C++</option>
+							<option value="Java☕️">Java</option>
+							<option value="Python🐍">Python</option>
+							<option value="HTML🧱">HTML</option>
+							<option value="CSS🎨">CSS</option>
+						</select>
+					</div>
+					<button type="submit" class="btn" id="enterBtn"> Enter Javascript </button>
+					<script>
+						function setValue(){
+							console.log("Inside the onchange function");
+							var selectElement = document.getElementById("room");
+							var selectedValue = selectElement.value;
+							var enterButton = document.getElementById("enterBtn");
+							enterButton.innerText = `Enter ${selectedValue}`;
+						}
+					</script>
+				</form>
+			</main>
+		</div>
+	</body>
+</html>
