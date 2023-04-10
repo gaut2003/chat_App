@@ -2,7 +2,8 @@ const chatForm = document.getElementById('chat-form');
 const chatMessages = document.querySelector('.chat-messages');
 const roomName = document.getElementById('room-name');
 const userList = document.getElementById('users');
-const audioElement = new Audio('../Ting.mp3');
+const audioElement1 = new Audio('../Ting.mp3');
+const audioElement2 = new Audio('../dispatch.wav');
 //Getting username and room from the URL
 const {username,room} = Qs.parse(location.search, {
     ignoreQueryPrefix: true
@@ -25,7 +26,7 @@ socket.on('message', txt => {
     console.log(txt);
     if(txt.username != 'You'){
         console.log('Playing when user has interacted');
-        audioElement.play();
+        audioElement1.play();
     }
     outputMessage(txt);
     //scroll down everytime a message is displayed
@@ -34,6 +35,7 @@ socket.on('message', txt => {
 
 //Message submit
 chatForm.addEventListener('submit', (e)=>{
+    audioElement2.play();
     e.preventDefault();
     const msg = e.target.elements.msg.value;
     //Emit a message to the sever
