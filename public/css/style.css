@@ -97,6 +97,7 @@ a {
 	background-color: var(--light-color);
 	border-radius: 5px;
 	text-align: right;
+	word-wrap: break-word;
 }
 .chat-messages .message2 {
 	padding: 10px;
@@ -104,12 +105,14 @@ a {
 	background-color: var(--light-color);
 	border-radius: 5px;
 	text-align: center;
+	word-wrap: break-word;
 }
 .chat-messages .message3 {
 	padding: 10px;
 	margin-bottom: 15px;
 	background-color: var(--light-color);
 	border-radius: 5px;
+	word-wrap: break-word;
 }
 
 .chat-messages .message1 .meta {
