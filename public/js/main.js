@@ -53,6 +53,7 @@ function outputMessage(txt){
     if(txt.username == 'You') div.classList.add('message1');
     else if(txt.username == 'ChatBot') div.classList.add('message2');
     else div.classList.add('message3');
+    console.log("Time is: ", txt.time, " object is : ", txt);
     div.innerHTML = `<p class="meta">${txt.username} <span>${txt.time}</span></p>
     <p class="text">
         ${txt.text}
